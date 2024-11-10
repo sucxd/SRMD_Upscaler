@@ -1,0 +1,28 @@
+# Ignore temporary frame folders and output videos
+frames/
+upscaled_frames/
+
+# Ignore any video files if you don’t want them in the repo
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Ignore executable files (in case SRMD-NCNN binaries are included)
+*.exe
+*.bin
+
+# Ignore log files and temporary files
+*.log
+*.tmp
+*.bak
+
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# System files and metadata
+.DS_Store
+Thumbs.db
+desktop.ini
