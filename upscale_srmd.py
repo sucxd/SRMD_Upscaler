@@ -23,6 +23,34 @@ bitrate = '15M'  # Video bitrate for FFmpeg encoding (e.g., '10M' for 10 Mbps)
 ffmpeg_preset = 'fast'  # Preset for FFmpeg encoding ('fast', 'medium', 'slow')
 # ========== END OF CONFIGURATION ==========
 
+
+import argparse
+
+# Add argument parsing
+parser = argparse.ArgumentParser(description="Video Upscaler")
+parser.add_argument("--input", required=True, help="Input video file path")
+parser.add_argument("--output", required=True, help="Output video file path")
+parser.add_argument("--fps", type=int, default=25, help="Frames per second")
+parser.add_argument("--scale", type=int, default=4, help="Upscale factor")
+parser.add_argument("--tile", type=int, default=768, help="Tile size for upscaling")
+parser.add_argument("--bitrate", default="10M", help="Output video bitrate")
+parser.add_argument("--preset", default="medium", help="FFmpeg encoding preset")
+args = parser.parse_args()
+
+# Assign parsed arguments to configuration variables
+input_video = args.input
+output_video = args.output
+fps = args.fps
+scale_factor = args.scale
+tile_size = args.tile
+bitrate = args.bitrate
+ffmpeg_preset = args.preset
+
+# (rest of your upscaler code follows here)
+# Use the parsed arguments (e.g., `input_video`, `output_video`, etc.) in your upscaler script
+
+
+
 # Directories for frame handling
 upscaled_frames_dir = 'upscaled_frames'
 os.makedirs(upscaled_frames_dir, exist_ok=True)
